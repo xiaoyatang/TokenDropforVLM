@@ -33,7 +33,7 @@ deepspeed --master_port=$PORT llava/train/train_mem.py \
     --image_aspect_ratio pad \
     --group_by_modality_length True \
     --bf16 True \
-    --output_dir ./checkpoints/Comp5/compressor3-6-pos_llava-v1.5-13b-lora \
+    --output_dir ./checkpoints/Comp5/compressor3-2-pos-reorder_llava-v1.5-13b-lora \
     --num_train_epochs 1 \
     --per_device_train_batch_size 32 \
     --per_device_eval_batch_size 4 \
@@ -53,7 +53,7 @@ deepspeed --master_port=$PORT llava/train/train_mem.py \
     --dataloader_num_workers 4 \
     --lazy_preprocess True \
     --report_to wandb \
-    --compressor_config ./tokenDropConfig/compressor3-6-pos.yaml \
+    --compressor_config ./tokenDropConfig/compressor3-2-pos-reorder.yaml \
     --compressor_lr 2e-5 
 
 

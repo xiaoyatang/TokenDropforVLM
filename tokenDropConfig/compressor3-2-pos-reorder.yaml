@@ -65,7 +65,7 @@ compressive:
   T0: 16
   mlp_ratio: 2.0                     # MLP ratio for compressive layers (default 2.0; model.mlp_ratio=4.0 for blocks)
   decoder_dim_multiplier: 0.5        # Decoder input projection scale in (0,1]; 1.0 = no projection
-  lambda_recon: 0.01                # 0.1 used in classification, 0.01 used in llava pretrain
+  lambda_recon: 0.001                # 0.1 used in classification, 0.01 used in llava pretrain
   lambda_recon_ramp_pretrain: false   # pretrain-only: when true use initial_pretrain -> ramp -> final_pretrain
   #lambda_recon_initial_pretrain: 0.0 # pretrain-only: value until recon_ramp_start_pretrain
   #lambda_recon_final_pretrain: 0.05  # pretrain-only: value at recon_ramp_end_pretrain and after
