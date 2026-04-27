@@ -42,6 +42,7 @@ playground/data/**/*.jpeg
 playground/data/**/*.gif
 playground/data/**/*.zip
 playground/data/**/*.txt
+playground/data/**/*.tsv
 
 # ignore zip files everywhere
 *.zip
