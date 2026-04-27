@@ -1,0 +1,59 @@
+
+# Python
+__pycache__
+*.pyc
+*.egg-info
+dist
+
+# Log
+*.log
+*.log.*
+*.json
+*.jsonl
+logs/
+
+# Data
+!**/alpaca-data-conversation.json
+
+# Editor
+.idea
+*.swp
+
+# Other
+.DS_Store
+wandb
+output
+
+checkpoints
+ckpts*
+checkpoints/
+checkpoint/
+*.pt
+*.pth
+*.ckpt
+
+.ipynb_checkpoints
+*.ipynb
+
+# ignore images & binary data in playground/data
+playground/data/**/*.jpg
+playground/data/**/*.png
+playground/data/**/*.jpeg
+playground/data/**/*.gif
+playground/data/**/*.zip
+playground/data/**/*.txt
+
+# ignore zip files everywhere
+*.zip
+
+# DevContainer
+!.devcontainer/*
+
+# Demo
+serve_images/
+
+# Evaluation outputs
+playground/data/eval/**/answers/
+playground/data/eval/**/answers_upload/
+playground/data/eval/**/*.csv
+playground/data/eval/**/*.xlsx
