@@ -24,10 +24,10 @@ logs/
 wandb
 output
 
-checkpoints
-ckpts*
-checkpoints/
-checkpoint/
+# recursive checkpoints
+**/checkpoints/
+**/ckpts*
+**/checkpoint/
 *.pt
 *.pth
 *.ckpt
@@ -36,13 +36,14 @@ checkpoint/
 *.ipynb
 
 # ignore images & binary data in playground/data
-playground/data/**/*.jpg
-playground/data/**/*.png
-playground/data/**/*.jpeg
-playground/data/**/*.gif
-playground/data/**/*.zip
-playground/data/**/*.txt
-playground/data/**/*.tsv
+#playground/data/**/*.jpg
+#playground/data/**/*.png
+#playground/data/**/*.jpeg
+#playground/data/**/*.gif
+#playground/data/**/*.zip
+#playground/data/**/*.txt
+#playground/data/**/*.tsv
+playground/
 
 # ignore zip files everywhere
 *.zip

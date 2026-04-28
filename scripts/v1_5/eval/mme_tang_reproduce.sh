@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=evalMMEcompressor1-pos2
+#SBATCH --job-name=evalMMEcompressor3-2-pos-reorder
 #SBATCH --partition=tolga-lab
 #SBATCH --gres=gpu:1
-#SBATCH --nodelist=pegasus
+#SBATCH --nodelist=chimera
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=40G #128G    
 #SBATCH --time=24:00:00
@@ -16,20 +16,20 @@ conda activate llava
 cd /uufs/sci.utah.edu/projects/DeepLearning/Xiaoya_GSV/LLaVA
 
 python -m llava.eval.model_vqa_loader \
-    --model-path ./checkpoints/Comp5/compressor1-pos2_llava-v1.5-13b-lora/compressor1-pos2_llava-v1.5-13b-merged \
+    --model-path ./checkpoints/Comp5/compressor3-2-pos-reorder_llava-v1.5-13b-lora/compressor3-2-pos-reorder_llava-v1.5-13b-merged \
     --question-file ./playground/data/eval/MME/llava_mme.jsonl \
     --image-folder ./playground/data/eval/MME/MME_Benchmark_release_version \
-    --answers-file ./playground/data/eval/MME/answers/compressor1-pos2_llava-v1.5-13b.jsonl \
+    --answers-file ./playground/data/eval/MME/answers/compressor3-2-pos-reorder_llava-v1.5-13b.jsonl \
     --temperature 0 \
     --conv-mode vicuna_v1 
 
 cd ./playground/data/eval/MME
 
-python convert_answer_to_mme.py --experiment compressor1-pos2_llava-v1.5-13b
+python convert_answer_to_mme.py --experiment compressor3-2-pos-reorder_llava-v1.5-13b
 
 cd eval_tool
 
-python calculation.py --results_dir answers/compressor1-pos2_llava-v1.5-13b
+python calculation.py --results_dir answers/compressor3-2-pos-reorder_llava-v1.5-13b
 
 
 

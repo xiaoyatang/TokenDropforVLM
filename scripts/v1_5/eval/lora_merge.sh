@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=mergecompressor1-pos2
+#SBATCH --job-name=mergecompressor3-2-pos-reorder
 #SBATCH --partition=tolga-lab
 #SBATCH --gres=gpu:1
-#SBATCH --nodelist=spartacus-3
+#SBATCH --nodelist=chimera
 #SBATCH --cpus-per-task=8 
 #SBATCH --mem=40G #128G    
 #SBATCH --time=12:00:00
@@ -16,9 +16,9 @@ conda activate llava
 cd /uufs/sci.utah.edu/projects/DeepLearning/Xiaoya_GSV/LLaVA
 
 python ./scripts/merge_lora_weights.py \
-    --model-path /uufs/sci.utah.edu/projects/DeepLearning/Xiaoya_GSV/LLaVA/checkpoints/Comp5/compressor1-pos2_llava-v1.5-13b-lora \
+    --model-path /uufs/sci.utah.edu/projects/DeepLearning/Xiaoya_GSV/LLaVA/checkpoints/Comp5/compressor3-2-pos-reorder_llava-v1.5-13b-lora \
     --model-base lmsys/vicuna-13b-v1.5 \
-    --save-model-path /uufs/sci.utah.edu/projects/DeepLearning/Xiaoya_GSV/LLaVA/checkpoints/Comp5/compressor1-pos2_llava-v1.5-13b-lora/compressor1-pos2_llava-v1.5-13b-merged/
+    --save-model-path /uufs/sci.utah.edu/projects/DeepLearning/Xiaoya_GSV/LLaVA/checkpoints/Comp5/compressor3-2-pos-reorder_llava-v1.5-13b-lora/compressor3-2-pos-reorder_llava-v1.5-13b-merged/
     # --model-path /uufs/sci.utah.edu/projects/DeepLearning/Xiaoya_GSV/LLaVA/checkpoints/compressConcaSMB_llava-v1.5-13b-lora/
     # --save-model-path /uufs/sci.utah.edu/projects/DeepLearning/Xiaoya_GSV/LLaVA/checkpoints/compressConcaSMB_llava-v1.5-13b-lora/compressConcaSMB_llava-v1.5-13b-merged/
     
